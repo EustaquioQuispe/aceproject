@@ -19,5 +19,11 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-
+//Ruta para acceso a controladores de usuario
 Route::resource('user', 'UserController');
+
+//Ruta para acceso a controladores de proyecto
+Route::resource('project', 'ProjectController');
+
+//Ruta para acceso a controladores de proyecto
+Route::resource('task', 'TaskController');
