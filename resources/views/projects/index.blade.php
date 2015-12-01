@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
 	<div class="row">
-      <div class="col-md-3 pull-right">
-        {!! Html::link(route('project.create'), 'Crear', array('class' => 'btn btn-info btn-md pull-right')) !!}
+     <div class="col-md-3 pull-left " style="margin-left:100px;margin-bottom:10px;">
+        {!! Html::link(route('project.create'), 'Add New', array('class' => 'btn btn-info btn-md pull-left')) !!}
        </div>
 		<div class="col-md-10 col-md-offset-1">
       @if(!$projects->isEmpty())

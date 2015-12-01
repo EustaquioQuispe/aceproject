@@ -6,8 +6,8 @@
 	<div class="row">
 
 		<div class="col-md-10 col-md-offset-1">
-    <div class="col-md-3 pull-right">
-      {!! Html::link(route('user.create'), 'Crear', array('class' => 'btn btn-info btn-md pull-right')) !!}
+    <div class="col-md-3 pull-left" style="margin-left:-15px;margin-bottom:10px;">
+      {!! Html::link(route('user.create'), 'Add New', array('class' => 'btn btn-info btn-md pull-left')) !!}
     </div>
 
       @if(!$users->isEmpty())

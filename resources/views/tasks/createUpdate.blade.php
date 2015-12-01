@@ -4,11 +4,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
-			<div class="col-md-3 pull-right">
-				{!! Html::link(route('task.create'), 'Crear', array('class' => 'btn btn-info btn-md pull-right')) !!}
-      		 </div>
+			
 			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
+	
 
                 @if($errors->has())
                     <div class='alert alert-danger'>
@@ -45,7 +43,7 @@
 							</div>
 
 							<div class="form-group">
-								{!! Form::select('state', array('active'  => 'active','inactive' =>  'inactive')); !!}
+								{!! Form::select('state', array('working'  => 'working','pending' =>  'pending','complete' =>  'complete')); !!}
 							</div>
 
 							<div class="form-group">
@@ -85,8 +83,7 @@
 							</div>
 
 							<div class="form-group">
-
-								{!! Form::select('state', array('active'  => 'active','inactive' =>  'inactive')); !!}
+                                {!! Form::select('state', array('working'  => 'working','pending' =>  'pending')); !!}
 							</div>
 
 							<div class="form-group">

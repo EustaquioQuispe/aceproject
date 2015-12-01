@@ -15,7 +15,7 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		return view("users.index")->with('users', \App\User::paginate(5)->setPath('user'));
+		return view("users.index")->with('users', \App\User::paginate(10)->setPath('user'));
 	}
 
 	/**
@@ -53,7 +53,7 @@ class UserController extends Controller {
 	 
 		$user->save();
 	 
-		return redirect('user/create')->with('message', 'User saved');
+		return redirect('user/')->with('message', 'User saved');
 	}
 
 	/**
@@ -104,7 +104,7 @@ class UserController extends Controller {
 	 
 		$user->save();
 	 
-		return redirect()->route('user.edit', ['user' => $id])->with('message', 'User updated');
+		return redirect()->route('user.index', ['user' => $id])->with('message', 'User updated');
 	}
 
 	/**

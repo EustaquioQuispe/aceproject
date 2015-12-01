@@ -14,7 +14,7 @@ class ProjectController extends Controller {
 	 */
 	public function index()
 	{
-		return view("projects.index")->with('projects', \App\Project::paginate(2)->setPath('project'));
+		return view("projects.index")->with('projects', \App\Project::paginate(10)->setPath('project'));
 	}
 
 	/**
@@ -42,7 +42,7 @@ class ProjectController extends Controller {
 
 		$project->save();
 
-		return redirect('project/create')->with('message', 'Project saved');
+		return redirect('project/')->with('message', 'Project saved');
 	}
 
 	/**
@@ -83,7 +83,7 @@ class ProjectController extends Controller {
 
 		$project->save();
 
-		return redirect()->route('project.edit', ['project' => $id])->with('message', 'Project updated');
+		return redirect()->route('project.index', ['project' => $id])->with('message', 'Project updated');
 	}
 
 	/**

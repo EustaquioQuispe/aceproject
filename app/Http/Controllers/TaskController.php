@@ -22,8 +22,14 @@ class TaskController extends Controller {
 		// 	dd($t->user);
 		// }
 
-		return view("tasks.index")->with('tasks', \App\Task::paginate(6)->setPath('task'));
+		return view("tasks.index")->with('tasks', \App\Task::paginate(10)->setPath('task'));
 	}
+
+	public function lists()
+        {
+        	    $users =  \DB::table('users')->lists('name', 'id');
+                return view("tasks.list")->with('tasks', \App\Task::paginate(10)->setPath('task'))->with('users', $users);
+        }
 
 	/**
 	 * Show the form for creating a new resource.
@@ -60,7 +66,7 @@ class TaskController extends Controller {
 
 		$task->save();
 
-		return redirect('task/create')->with('message', 'Task saved');
+		return redirect('task/')->with('message', 'Task saved');
 	}
 
 	/**
@@ -111,7 +117,7 @@ class TaskController extends Controller {
 	 
 		$task->save();
 	 
-		return redirect()->route('task.edit', ['task' => $id])->with('message', 'Task updated');
+		return redirect()->route('task.index', ['task' => $id])->with('message', 'Task updated');
 	}
 
 	/**

@@ -3,12 +3,10 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-md-3 pull-right">
-		{!! Html::link(route('project.create'), 'Crear', array('class' => 'btn btn-info btn-md pull-right')) !!}
-       	</div>
+		
 		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
-				<div class="panel-heading">Create Project</div>
+		
 
                 @if($errors->has())
                     <div class='alert alert-danger'>

@@ -21,22 +21,21 @@
 <body>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
-			</div>
+		
 
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Home</a></li>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-top:12px;">
+				<ul class="nav navbar-nav" >
+
+				   <li> <a class="navbar-brand" href="#"><img src="{{ asset('/img/logo.png') }}" style="width:170px; height:40px; margin-top:-8px;margin-right:300px;" /></a></li>
+					<li style="margin-top:6px;"><a href="{{ url('/') }}">HOME</a></li>
+					<li style="margin-top:6px;"><a href="{{ url('/user') }}">USERS</a></li>
+                    <li style="margin-top:6px;"><a href="{{ url('/project') }}">PROJECTS</a></li>
+                    <li style="margin-top:6px;"><a href="{{ url('/task') }}">TASKS</a></li>
+
 				</ul>
 
-				<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav navbar-right" style="margin-top:6px;">
 					@if (Auth::guest())
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
@@ -52,6 +51,9 @@
 			</div>
 		</div>
 	</nav>
+	 <!-- Fixed navbar -->
+
+
 
 	@yield('content')
 

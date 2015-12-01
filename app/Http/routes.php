@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'TaskController@lists');
 
 Route::get('home', 'HomeController@index');
 
@@ -27,3 +27,6 @@ Route::resource('project', 'ProjectController');
 
 //Ruta para acceso a controladores de proyecto
 Route::resource('task', 'TaskController');
+
+Route::get('tasks','TaskController@lists');
+
