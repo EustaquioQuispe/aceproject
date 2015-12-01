@@ -25,8 +25,8 @@
                     <td width="500">{{ $task->description }}</td>
                     <td width="500">{{ $task->deadline }}</td>
                     <td width="500">{{ $task->state }}</td>
-                    <td width="500">{{ $task->id_user }}</td>
-                    <td width="500">{{ $task->id_project }}</td>
+                    <td width="500">{{ $task->user->name }}</td>
+                    <td width="500">{{ $task->project->name }}</td>
                     <td width="60" align="center">
                       {!! Html::link(route('task.edit', $task->id), 'Edit', array('class' => 'btn btn-success btn-md')) !!}
                     </td>

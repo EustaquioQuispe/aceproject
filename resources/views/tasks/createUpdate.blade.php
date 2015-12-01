@@ -41,19 +41,19 @@
 
 
 							<div class="form-group">
-								{!! Form::text('deadline', null, ["class" => "form-control", 'placeholder'=>'Deadline']) !!}
+								{!! Form::input('date', 'deadline') !!}
 							</div>
 
 							<div class="form-group">
-								{!! Form::text('state', null, ["class" => "form-control", 'placeholder'=>'State']) !!}
+								{!! Form::select('state', array('active'  => 'active','inactive' =>  'inactive')); !!}
 							</div>
 
 							<div class="form-group">
-								{!! Form::text('id_user', null, ["class" => "form-control", 'placeholder'=>'Id user']) !!}
+								{!! Form::select('id_user', $users) !!}
 							</div>
 
 							<div class="form-group">
-								{!! Form::text('id_project', null, ["class" => "form-control", 'placeholder'=>'Id project']) !!}
+								{!! Form::select('id_project', $projects) !!}
 							</div>
 
 
@@ -81,19 +81,20 @@
 
 
 							<div class="form-group">
-								{!! Form::text('deadline', null, ["class" => "form-control", 'placeholder'=>'Deadline']) !!}
+								{!! Form::input('date', 'deadline') !!}
 							</div>
 
 							<div class="form-group">
-								{!! Form::text('state', null, ["class" => "form-control", 'placeholder'=>'State']) !!}
+
+								{!! Form::select('state', array('active'  => 'active','inactive' =>  'inactive')); !!}
 							</div>
 
 							<div class="form-group">
-								{!! Form::text('id_user', null, ["class" => "form-control", 'placeholder'=>'Id user']) !!}
+								{!! Form::select('id_user', $users) !!}
 							</div>
 
 							<div class="form-group">
-								{!! Form::text('id_project', null, ["class" => "form-control", 'placeholder'=>'Id project']) !!}
+								{!! Form::select('id_project', $projects) !!}
 							</div>
 
 

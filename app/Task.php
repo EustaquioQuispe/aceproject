@@ -11,4 +11,14 @@ class Task extends Model {
 
 	protected $guarded = ['id'];
 
+	public function user()
+	{
+    	return $this->belongsTo('App\User', 'id_user');
+	}
+
+	public function project()
+	{
+    	return $this->belongsTo('App\Project', 'id_project');
+	}
+
 }

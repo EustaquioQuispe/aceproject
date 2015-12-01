@@ -43,11 +43,11 @@
 								</div>
 
 								<div class="form-group">
-									{!! Form::text('type', null, ["class" => "form-control", 'placeholder'=>'Type']) !!}
+									{!! Form::select('type', array('normal'  => 'normal','admin' =>  'admin')); !!}
 								</div>
 
 								<div class="form-group">
-									{!! Form::text('state', null, ["class" => "form-control", 'placeholder'=>'State']) !!}
+									{!! Form::select('state', array('active'  => 'active','inactive' =>  'inactive')); !!}
 								</div>
 								<div class="form-group">
 									{!! Form::submit('Send', ["class" => "btn btn-success btn-block"]) !!}
@@ -79,12 +79,11 @@
 								</div>
 
 								<div class="form-group">
-									{!! Form::text('type', null, ["class" => "form-control", 'placeholder'=>'Type']) !!}
+									{!! Form::select('type', array('normal'  => 'normal','admin' =>  'admin')); !!}
 								</div>
 
 								<div class="form-group">
-									{!! Form::text('state', null, ["class" => "form-control", 'placeholder'=>'State']) !!}
-								</div>
+									{!! Form::select('state', array('active'  => 'active','inactive' =>  'inactive')); !!}								</div>
 								<div class="form-group">
 									{!! Form::submit('Send', ["class" => "btn btn-success btn-block"]) !!}
 								</div>

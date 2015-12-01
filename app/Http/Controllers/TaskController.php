@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\TaskForm;
+use App\Task;
 
 class TaskController extends Controller {
 
@@ -15,7 +16,13 @@ class TaskController extends Controller {
 	 */
 	public function index()
 	{
-		return view("tasks.index")->with('tasks', \App\Task::paginate(2)->setPath('task'));
+		// $task = Task::all();
+		// foreach($task as $t)
+		// {
+		// 	dd($t->user);
+		// }
+
+		return view("tasks.index")->with('tasks', \App\Task::paginate(6)->setPath('task'));
 	}
 
 	/**
@@ -25,7 +32,9 @@ class TaskController extends Controller {
 	 */
 	public function create()
 	{
-		return view("tasks.createUpdate");
+		$users =  \DB::table('users')->lists('name', 'id');
+		$projects =  \DB::table('projects')->lists('name', 'id');
+		return view("tasks.createUpdate")->with('users', $users)->with('projects', $projects);
 	}
 
 	/**
@@ -73,7 +82,9 @@ class TaskController extends Controller {
 	 */
 	public function edit($id)
 	{
-		return view('tasks.createUpdate')->with('task', \App\Task::find($id));
+		$users =  \DB::table('users')->lists('name', 'id');
+		$projects =  \DB::table('projects')->lists('name', 'id');
+		return view('tasks.createUpdate')->with('task', \App\Task::find($id))->with('users', $users)->with('projects', $projects);
 	}
 
 	/**

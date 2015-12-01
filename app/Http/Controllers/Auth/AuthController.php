@@ -35,4 +35,13 @@ class AuthController extends Controller {
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
 
+	public function login()
+    {
+    		dd("autenticaconi");
+        if (Auth::attempt(['email' => $email, 'password' => $password]))
+        {
+            return redirect()->intended('dashboard');
+        }
+    }
+
 }
